@@ -1,0 +1,11 @@
+<h2>List of all Batches</h2>
+{% if all_batches %}
+    <ul>
+        {% for batch in all_batches %}
+            <li><a href = "/batch/{{ batch.id }}">{{ batch.batch_name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3>You don't have any batch</h3>
+{% endif %}
+
