@@ -1,7 +1,11 @@
-<h3>Batch Name : {{ batch.batch_name }}</h3>
-<h4>Stream : {{ batch.batch_stream }}</h4>
-<h4>Contact No. : {{ batch.batch_contact }}</h4>
-<h2><b>Student Details : </b></h2>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<h3><span class="label label-info">Batch Name  </span><span class="label label-success">{{ batch.batch_name }} </span> </h3>
+<h4><span class="label label-info">Stream  </span><span class="label label-success">{{ batch.batch_stream }}</span> </h4>
+<h4><span class="label label-info">Contact No.  </span><span class="label label-success">{{ batch.batch_contact }}</span> </h4>
+<h2><b><span class="label label-warning">Student Details  </span></b></h2>
 
 <table style="width:100%">
     <tr>
@@ -21,6 +25,7 @@
             border: 1px solid transparent; /* No more visible border */
             height: 30px;
             transition: all 0.3s;  /* Simple transition for hover effect */
+             text-align: center;
         }
 
         th {
