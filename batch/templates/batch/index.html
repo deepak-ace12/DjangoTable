@@ -1,8 +1,12 @@
-<h2>List of all Batches</h2>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<h3><span class="label label-info">List of all Batches </span></h3>
 {% if all_batches %}
     <ul>
         {% for batch in all_batches %}
-            <li><a href = "/batch/{{ batch.id }}">{{ batch.batch_name }}</a></li>
+            <li><a href = "/batch/{{ batch.id }}"><h3><span class="label label-primary" >{{ batch.batch_name }}</span></h3></a></li>
         {% endfor %}
     </ul>
 {% else %}
