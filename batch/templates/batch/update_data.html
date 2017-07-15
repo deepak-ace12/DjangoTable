@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<form action="www.google.com">
+<form action="/batch/{{ batch.id }}/">
 
   {% for student in batch.student_set.all %}
       Contact No:<br>
