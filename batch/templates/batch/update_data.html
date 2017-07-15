@@ -3,12 +3,15 @@
 <body>
 
 <form action="/action_page.php">
-  First name:<br>
-  <input type="text" name="firstname" value="First_Name">
-  <br>
-  Last name:<br>
-  <input type="text" name="lastname" value="Last_Name">
+
+  {% for student in batch.student_set.all %}
+      First name:<br>
+      <input type="text" name="firstname" value="{{ student.first_name }}">
+      <br>
+      Last name:<br>
+      <input type="text" name="lastname" value="{{ student.last_name }}">
   <br><br>
+  {% endfor %}
   <input type="submit" value="Submit">
 </form>
 
