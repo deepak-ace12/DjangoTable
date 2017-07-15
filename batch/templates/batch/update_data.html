@@ -2,17 +2,17 @@
 <html>
 <body>
 
-<form action="/action_page.php">
+<form action="www.google.com">
 
   {% for student in batch.student_set.all %}
-      First name:<br>
-      <input type="text" name="firstname" value="{{ student.first_name }}">
+      Contact No:<br>
+      <input type="text" name="Contact No." value="{{ student.student_contact }}">
       <br>
-      Last name:<br>
-      <input type="text" name="lastname" value="{{ student.last_name }}">
+      Email <br>
+      <input type="text" name="Email" value="{{ student.student_email }}">
   <br><br>
   {% endfor %}
-  <input type="submit" value="Submit">
+  <input type="submit" value="Update">
 </form>
 
 </body>

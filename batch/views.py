@@ -11,3 +11,7 @@ def batch_students(request, batch_id):
     batch = get_object_or_404(Batch, pk = batch_id)
     return render(request, 'batch/batch_students.html', {'batch':batch})
 
+def update_data(request, batch_id):
+    batch = Batch.objects.get(pk = batch_id)
+    return render(request, 'batch/update_data.html', {'batch':batch})
+

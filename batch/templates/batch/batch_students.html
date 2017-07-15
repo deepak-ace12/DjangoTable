@@ -2,58 +2,68 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
-<h3><span class="label label-info">Batch Name  </span><span class="label label-success">{{ batch.batch_name }} </span> </h3>
-<h4><span class="label label-info">Stream  </span><span class="label label-success">{{ batch.batch_stream }}</span> </h4>
-<h4><span class="label label-info">Contact No.  </span><span class="label label-success">{{ batch.batch_contact }}</span> </h4>
-<h2><b><span class="label label-warning">Student Details  </span></b></h2>
+<div class="container">
+    <h3><span class="label label-info">Batch Name  </span><span class="label label-success">{{ batch.batch_name }} </span> </h3>
+    <h4><span class="label label-info">Stream  </span><span class="label label-success">{{ batch.batch_stream }}</span> </h4>
+    <h4><span class="label label-info">Contact No.  </span><span class="label label-success">{{ batch.batch_contact }}</span> </h4>
+    <h2><b><span class="label label-warning">Student Details  </span></b></h2>
 
-<table style="width:100%">
-    <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Contact</th>
-    <style>
-        table {
-            color: #333;
-            font-family: Helvetica, Arial, sans-serif;
-            width: 640px;
-            border-collapse:
-            collapse; border-spacing: 0;
-        }
-
-        td, th {
-            border: 1px solid transparent; /* No more visible border */
-            height: 30px;
-            transition: all 0.3s;  /* Simple transition for hover effect */
-             text-align: center;
-        }
-
-        th {
-            background: #DFDFDF;  /* Darken header a bit */
-            font-weight: bold;
-        }
-
-        td {
-            background: #FAFAFA;
-            text-align: center;
-        }
-
-        /* Cells in even rows (2,4,6...) are one color */
-        tr:nth-child(even) td { background: #F1F1F1; }
-
-        /* Cells in odd rows (1,3,5...) are another (excludes header cells)  */
-        tr:nth-child(odd) td { background: #FEFEFE; }
-
-        tr td:hover { background: #666; color: #FFF; }
-        /* Hover cell effect! */
-    </style>
-
-  </tr>
-    {% for student in batch.student_set.all %}
+    <table style="width:100%">
         <tr>
-            <td>{{ student.first_name }}</td>
-            <td>{{ student.last_name }}</td>
-            <td>{{ student.student_contact }}</td>
-        </tr>
-    {% endfor %}
-</table>
+            <div class="row">
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Contact No</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
+            </div>
+        <style>
+            table {
+                color: #333;
+                font-family: Helvetica, Arial, sans-serif;
+                width: 640px;
+                border-collapse:
+                collapse; border-spacing: 0;
+            }
+
+            td, th{
+                border: 1px solid transparent; /* No more visible border */
+                height: 30px;
+                transition: all 0.3s;  /* Simple transition for hover effect */
+                text-align: center;
+            }
+
+            th {
+                background: #DFDFDF;  /* Darken header a bit */
+                font-weight: bold;
+            }
+
+            td {
+                background: #FAFAFA;
+                text-align: center;
+            }
+
+            /* Cells in even rows (2,4,6...) are one color */
+            tr:nth-child(even) td { background: #F1F1F1; }
+
+            /* Cells in odd rows (1,3,5...) are another (excludes header cells)  */
+            tr:nth-child(odd) td { background: #FEFEFE; }
+
+            tr:hover { background: black; color: red; }*/
+            /* Hover cell effect! */
+        </style>
+
+      </tr>
+        {% for student in batch.student_set.all %}
+            <tr>
+                <td>{{ student.first_name }}</td>
+                <td>{{ student.last_name }}</td>
+                <td>{{ student.student_contact }}</td>
+                <td>{{ student.student_email }}</td>
+                <td>{{ student.student_DOB }}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="/batch/{{ batch.id }}/update_data/" class="btn btn-primary">Update</a>
+</div>

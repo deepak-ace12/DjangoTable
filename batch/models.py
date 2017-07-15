@@ -17,7 +17,8 @@ class Student(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     student_contact = models.CharField(max_length=100)
-
+    student_email = models.CharField(max_length=100, default='abc@example.com')
+    student_DOB = models.CharField(max_length=100, default='dd/mm//yyyy')
     def __str__(self):
         return self.first_name+' '+self.last_name
 
